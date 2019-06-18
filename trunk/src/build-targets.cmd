@@ -221,7 +221,7 @@ exit /B 1
     
     :success
     :: revert manifests to their default state
-    if %1 neq X86 call make-manifests.cmd X86
+    if %1 neq amd64 call make-manifests.cmd amd64
 
     set WX_CONFIG=
     set WXWIDGETS_INC_PATH=
@@ -231,7 +231,7 @@ exit /B 1
 
     :fail
     :: revert manifests to their default state
-    if %1 neq X86 call make-manifests.cmd X86
+    if %1 neq amd64 call make-manifests.cmd amd64
 
     set WX_CONFIG=
     set WXWIDGETS_INC_PATH=
