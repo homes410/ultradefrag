@@ -100,12 +100,12 @@ goto finished
 
 :5
 title Build .................. using WinSDK, no IA64
-call build.cmd --use-winsdk --no-ia64
+call build.cmd --use-winsdk --x86 --amd64
 goto finished
 
 :6
 title Build Portable ......... using WinSDK, no IA64
-call build.cmd --portable --use-winsdk --no-ia64
+call build.cmd --portable --use-winsdk --x86 --amd64
 goto finished
 
 :7
@@ -168,7 +168,7 @@ goto finished
 :15
 title Build Test Release for Stefan
 echo.
-call build.cmd --use-winsdk --no-ia64
+call build.cmd --use-winsdk --x86 --amd64
 echo.
 call :CopyInstallers -zip
 goto finished
@@ -176,15 +176,15 @@ goto finished
 :16
 title Build Test Installation for Stefan
 echo.
-if %PROCESSOR_ARCHITECTURE% == AMD64 call build.cmd --use-winsdk --no-ia64 --no-x86 --install
-if %PROCESSOR_ARCHITECTURE% == x86 call build.cmd --use-winsdk --no-ia64 --no-amd64 --install
+if %PROCESSOR_ARCHITECTURE% == AMD64 call build.cmd --use-winsdk --install
+if %PROCESSOR_ARCHITECTURE% == x86 call build.cmd --use-winsdk --x86 --install
 echo.
 goto finished
 
 :17
 title Build Test AMD64 for Stefan
 echo.
-call build.cmd --use-winsdk --no-ia64 --no-x86
+call build.cmd --use-winsdk
 echo.
 call :CopyInstallers
 goto finished
@@ -192,7 +192,7 @@ goto finished
 :18
 title Build Test x86 for Stefan
 echo.
-call build.cmd --use-winsdk --no-ia64 --no-amd64
+call build.cmd --use-winsdk --x86
 echo.
 call :CopyInstallers
 goto finished
