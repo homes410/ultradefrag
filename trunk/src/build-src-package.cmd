@@ -18,7 +18,7 @@
 :: Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 ::
 
-echo Build source code package...
+echo Building source code package...
 
 :: set environment variables
 if "%ULTRADFGVER%" == "" (

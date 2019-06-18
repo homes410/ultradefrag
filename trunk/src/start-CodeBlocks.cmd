@@ -30,5 +30,5 @@ start "" "%CODEBLOCKS_EXE%" "UltraDefrag.workspace"
 exit /B 0
 
 :cb_missing
-echo !!! Code::Blocks executable not set correctly !!!
+echo !!! Code::Blocks executable is not set correctly !!!
 exit /B 1

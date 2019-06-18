@@ -1,5 +1,5 @@
 @echo off
-echo Set Stefans' environment variables...
+echo Setting Stefan's environment variables...
 
 :: save username, since build process overwrites it
 if not defined ORIG_USERNAME set ORIG_USERNAME=%USERNAME%

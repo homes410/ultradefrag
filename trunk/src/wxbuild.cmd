@@ -62,7 +62,7 @@ if %UD_BLD_FLG_USE_COMPILER% equ %UD_BLD_FLG_USE_WINSDK%  goto winsdk_build
     set OLD_PATH=%path%
 
     if %UD_BLD_FLG_BUILD_X86% neq 0 (
-        echo --------- Target is x86 ---------
+        echo --------- x86 target ---------
         set AMD64=
         set IA64=
         pushd ..
@@ -74,7 +74,7 @@ if %UD_BLD_FLG_USE_COMPILER% equ %UD_BLD_FLG_USE_WINSDK%  goto winsdk_build
     set path=%OLD_PATH%
 
     if %UD_BLD_FLG_BUILD_AMD64% neq 0 (
-        echo --------- Target is x64 ---------
+        echo --------- x64 target ---------
         set AMD64=1
         set IA64=
         pushd ..
@@ -86,7 +86,7 @@ if %UD_BLD_FLG_USE_COMPILER% equ %UD_BLD_FLG_USE_WINSDK%  goto winsdk_build
     set path=%OLD_PATH%
 
     if %UD_BLD_FLG_BUILD_IA64% neq 0 (
-        echo --------- Target is ia64 ---------
+        echo --------- ia64 target ---------
         set AMD64=
         set IA64=1
         pushd ..
@@ -103,7 +103,7 @@ goto success
 
     set OLD_PATH=%path%
 
-    echo --------- Target is x64 ---------
+    echo --------- x64 target ---------
     echo.
     set AMD64=1
     set IA64=
@@ -118,7 +118,7 @@ goto success
 
     set OLD_PATH=%path%
 
-    echo --------- Target is x86 ---------
+    echo --------- x86 target ---------
     echo.
     set AMD64=
     set IA64=

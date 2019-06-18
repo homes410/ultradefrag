@@ -28,7 +28,7 @@ if %UD_BLD_FLG_DIPLAY_HELP% equ 1 (
 )
 
 if %UD_BLD_FLG_ONLY_CLEANUP% equ 1 (
-    echo Delete all intermediate files...
+    echo Removing intermediate files...
     call :cleanup > nul 2>&1
     echo Cleanup success!
     exit /B 0
@@ -51,7 +51,7 @@ if "%UD_BLD_FLG_UPDATE_TRANSLATIONS%" == "1" (
 )
 
 :: build installers and portable packages
-echo Build installers and/or portable packages...
+echo Building installers and/or portable packages...
 if %UD_BLD_FLG_BUILD_X86% neq 0 (
     call :build_installer              .\bin i386 || goto fail
     call :build_portable_package       .\bin i386 || goto fail
@@ -251,7 +251,7 @@ rem Installs the program.
     )
     set INSTALLER_NAME=ultradefrag
 
-    echo Start installer...
+    echo Launching installer...
     %INSTALLER_PATH%\%INSTALLER_NAME%-%UDVERSION_SUFFIX%.bin.%INSTALLER_ARCH%.exe /S
     if %errorlevel% neq 0 (
         echo Installation failed!

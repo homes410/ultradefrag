@@ -1,4 +1,4 @@
-:: @echo off
+@echo off
 ::
 :: Script to upload translations to the translation project at
 :: https://www.transifex.com/projects/p/ultradefrag/
@@ -68,12 +68,12 @@ title Translations uploaded sucessfully!
 exit /B 0
 
 :gnuwin32_missing
-echo !!! GNUwin32 path not set correctly !!!
+echo !!! GNUwin32 path is not set correctly !!!
 set ERRORLEVEL=99
 
 :fail
 if "%OLD_PATH%" neq "" set path=%OLD_PATH%
 set OLD_PATH=
-echo Build error (code %ERRORLEVEL%)!
-title Build error (code %ERRORLEVEL%)!
+echo Translations upload error (code %ERRORLEVEL%)!
+title Translations upload error (code %ERRORLEVEL%)!
 exit /B 1

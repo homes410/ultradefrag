@@ -59,8 +59,8 @@ set ERRORLEVEL=99
 :fail
 if "%OLD_PATH%" neq "" set path=%OLD_PATH%
 set OLD_PATH=
-echo Build error (code %ERRORLEVEL%)!
-title Build error (code %ERRORLEVEL%)!
+echo Translations update error (code %ERRORLEVEL%)!
+title Translations update error (code %ERRORLEVEL%)!
 exit /B 1
 
 :: syntax: call :check_translation {.PO file}

@@ -19,7 +19,7 @@
 :: Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 ::
 
-echo Build UltraDefrag documentation...
+echo Building UltraDefrag documentation...
 
 call ParseCommandLine.cmd %*
 

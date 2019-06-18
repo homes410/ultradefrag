@@ -1,5 +1,5 @@
 @echo off
-echo Set common environment variables...
+echo Setting common environment variables...
 
 :: UltraDefrag version
 set VERSION_MAJOR=7
