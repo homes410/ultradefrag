@@ -22,13 +22,13 @@ set ENABLE_WX_ASSERTS=0
 
 :: paths to development tools
 set WINSDKBASE=C:\Program Files\Microsoft SDKs\Windows\v7.1
-set MINGWBASE=D:\Software\MinGW32
-set MINGWx64BASE=D:\Software\mingw64
-set WXWIDGETSDIR=D:\Software\wxWidgets-3.1.0
-set NSISDIR=D:\Software\Tools\NSIS
+set MINGWBASE=C:\Dev\TDM-GCC-32
+set MINGWx64BASE=C:\Dev\TDM-GCC-64
+set WXWIDGETSDIR=C:\Dev\wxWidgets-3.1.0
+set NSISDIR=C:\Program Files (x86)\NSIS
 set SEVENZIP_PATH=C:\Program Files\7-Zip
-set GNUWIN32_DIR=D:\Software\GnuWin32\bin
-set CODEBLOCKS_EXE=D:\Software\CodeBlocks\codeblocks.exe
+set GNUWIN32_DIR=C:\Program Files (x86)\GnuWin32\bin
+set CODEBLOCKS_EXE=C:\Program Files (x86)\CodeBlocks\codeblocks.exe
 
 :: auxiliary stuff
 set VERSION=%VERSION_MAJOR%,%VERSION_MINOR%,%VERSION_REVISION%,0
