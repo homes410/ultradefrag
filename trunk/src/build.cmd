@@ -299,22 +299,22 @@ rem Displays usage information.
     echo --clean         perform full cleanup instead of the build
     echo.
     echo Compiler:
-    echo --use-mingw     (default)
-    echo --use-winsdk    (we use it for official releases)
-    echo --use-mingw-x64 (experimental, produces wrong x64 code)
+    echo --use-winsdk    (default)
+    echo --use-mingw
+    echo --use-mingw-x64 (experimental, produces incorrect code)
     echo.
-    echo Target architecture (must always be after compiler):
-    echo --no-x86        don't build 32-bit binaries
-    echo --no-amd64      don't build x64 binaries
-    echo --no-ia64       don't build IA-64 binaries
+    echo Target architecture (must always be after the compiler):
+    echo --x86           build 32-bit binaries
+    echo --amd64         build x64 binaries
+    echo --ia64          build IA-64 binaries
     echo.
     echo Additional stuff:
     echo --pdf           build PDF documentation
     echo --dev           build developer documentation
     echo --trans         update translations
     echo.
-    echo Without parameters the build command uses MinGW
-    echo to build 32-bit installer.
+    echo Without parameters the build command uses Windows SDK
+    echo to build the x64 installer.
     echo.
     echo * Run patch-tools.cmd once before compilation!
 goto :EOF

@@ -47,9 +47,9 @@ copy /Y .\tools\patch\wx\statusbar.cpp "%WXWIDGETSDIR%\src\msw\statusbar.cpp"
 
 :: build wxWidgets
 if %UD_BLD_FLG_USE_COMPILER% equ 0 (
-    echo No parameters specified, using defaults.
+    echo No compiler specified, using Windows SDK.
     echo.
-    goto mingw_build
+    goto winsdk_build
 )
 
 if %UD_BLD_FLG_USE_COMPILER% equ %UD_BLD_FLG_USE_MINGW%   goto mingw_build
@@ -254,20 +254,20 @@ rem Displays usage information.
     echo --clean         perform full cleanup instead of the build
     echo.
     echo Compiler:
-    echo --use-mingw     (default)
-    echo --use-winsdk    (we use it for official releases)
-    echo --use-mingw-x64 (experimental, produces wrong x64 code)
+    echo --use-winsdk    (default)
+    echo --use-mingw
+    echo --use-mingw-x64 (experimental, produces incorrect code)
     echo.
-    echo Target architecture (must always be after compiler):
-    echo --no-x86        don't build 32-bit binaries
-    echo --no-amd64      don't build x64 binaries
-    echo --no-ia64       don't build IA-64 binaries
+    echo Target architecture (must always be after the compiler):
+    echo --x86           build 32-bit binaries
+    echo --amd64         build x64 binaries
+    echo --ia64          build IA-64 binaries
     echo.
     echo Example:
-    echo wxbuild --use-winsdk --no-amd64 --no-ia64 --clean
+    echo wxbuild --use-winsdk --amd64 --ia64 --clean
     echo.
-    echo In this case the x86 winsdk build will be cleaned up.
+    echo In this case the x64 and IA-64 winsdk builds will be cleaned up.
     echo.
-    echo Without parameters the wxbuild command uses MinGW
-    echo to compile 32-bit libraries.
+    echo Without parameters the wxbuild command uses Windows SDK
+    echo to compile x64 libraries.
 goto :EOF

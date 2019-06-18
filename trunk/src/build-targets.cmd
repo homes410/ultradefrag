@@ -23,14 +23,14 @@ rem Usage:
 rem     build-targets [<compiler>] [options]
 rem
 rem Available <compiler> values:
-rem     --use-mingw     (default)
-rem     --use-winsdk    (we use it for official releases)
-rem     --use-mingw-x64 (experimental, produces wrong x64 code)
+rem     --use-winsdk    (default)
+rem     --use-mingw
+rem     --use-mingw-x64 (experimental, produces incorrect code)
 rem
 rem Options:
-rem     --no-x86        don't build 32-bit binaries
-rem     --no-amd64      don't build x64 binaries
-rem     --no-ia64       don't build IA-64 binaries
+rem     --x86           build 32-bit binaries
+rem     --amd64         build x64 binaries
+rem     --ia64          build IA-64 binaries
 
 rem NOTE: IA-64 binaries have never been tested by
 rem the authors because of lack of Itanium hardware.
@@ -53,9 +53,9 @@ set UD_ROOT=%cd%
 
 :: build all modules by the selected compiler
 if %UD_BLD_FLG_USE_COMPILER% equ 0 (
-    echo No parameters specified, using defaults.
+    echo No compiler specified, using Windows SDK.
     echo.
-    goto mingw_build
+    goto winsdk_build
 )
 
 if %UD_BLD_FLG_USE_COMPILER% equ %UD_BLD_FLG_USE_MINGW%   goto mingw_build

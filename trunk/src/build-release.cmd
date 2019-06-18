@@ -37,7 +37,7 @@ copy .\bin\ultradefrag-%UDVERSION_SUFFIX%.bin.i386.exe .\release\
 copy .\bin\ultradefrag-portable-%UDVERSION_SUFFIX%.bin.i386.zip .\release\
 
 :: build 64-bit binaries using Windows SDK
-call build.cmd --all --use-winsdk --no-x86 || goto build_failed
+call build.cmd --all --use-winsdk --amd64 --ia64 || goto build_failed
 copy .\bin\amd64\ultradefrag-%UDVERSION_SUFFIX%.bin.amd64.exe .\release\
 copy .\bin\amd64\ultradefrag-portable-%UDVERSION_SUFFIX%.bin.amd64.zip .\release\
 copy .\bin\ia64\ultradefrag-%UDVERSION_SUFFIX%.bin.ia64.exe .\release\
