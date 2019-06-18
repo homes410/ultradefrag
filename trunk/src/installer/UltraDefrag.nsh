@@ -149,6 +149,15 @@
             Download UltraDefrag v6 for Windows NT 4.0 and Windows 2000."
         Abort
     ${EndIf}
+    
+    ; binaries built with Windows SDK 7.1 require at least Windows XP SP2
+    ${If} ${IsWinXP}
+        ${IfNot} ${AtLeastServicePack} 2
+            ${LogAndDisplayAbort} \
+                "This program requires at least Windows XP Service Pack 2 to be installed!"
+            Abort
+        ${EndIf}
+    ${EndIf}
 
     /* this idea was suggested by bender647 at users.sourceforge.net */
     Push $R0
