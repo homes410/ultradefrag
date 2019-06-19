@@ -119,6 +119,8 @@ Icon "${ROOTDIR}\src\installer\udefrag-install.ico"
 UninstallIcon "${ROOTDIR}\src\installer\udefrag-uninstall.ico"
 
 XPStyle on
+ManifestDPIAware true
+ManifestSupportedOS all
 RequestExecutionLevel admin
 
 InstType "Full"
