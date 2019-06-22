@@ -697,12 +697,12 @@
  * The program is licensed under the terms of the @subpage GPL.
  *
  * @htmlonly
- * <HR>
- *  <TABLE STYLE="border: none; width: 97%; margin:auto;">
- *    <TR>
- *      <TD STYLE="text-align: left; width: 50%;">Previous: <a href="Development.html">Development</a></TD>
- *      <TD STYLE="text-align: right; width: 50%;">Next: <a href="index.html">UltraDefrag Handbook</a></TD>
- *    </TR>
- *  </TABLE>
+ * <hr>
+ * <table id="nav-table">
+ *  <tr>
+ *   <td><a href="Development.html">&#x25c4; Development</a></td>
+ *   <td></td>
+ *  </tr>
+ * </table>
  * @endhtmlonly
  */

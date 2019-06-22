@@ -50,12 +50,12 @@
  * Feel free to redistribute them under certain conditions.
  *
  * @htmlonly
- * <HR>
- *  <TABLE STYLE="border: none; width: 97%; margin:auto;">
- *    <TR>
- *      <TD STYLE="text-align: left; width: 50%;"></TD>
- *      <TD STYLE="text-align: right; width: 50%;">Next: <a href="Introduction.html">Introduction</a></TD>
- *    </TR>
- *  </TABLE>
+ * <hr>
+ * <table id="nav-table">
+ *  <tr>
+ *   <td></td>
+ *   <td><a href="Introduction.html">Introduction &#x25b6;</a></td>
+ *  </tr>
+ * </table>
  * @endhtmlonly
  */

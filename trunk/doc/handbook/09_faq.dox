@@ -127,12 +127,12 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\BootExecute
  * over files placement, UltraDefrag uses much simpler algorithms which are faster and easier to use.
  *
  * @htmlonly
- * <HR>
- *  <TABLE STYLE="border: none; width: 97%; margin:auto;">
- *    <TR>
- *      <TD STYLE="text-align: left; width: 50%;">Previous: <a href="Tips.html">Tips and Tricks</a></TD>
- *      <TD STYLE="text-align: right; width: 50%;">Next: <a href="Troubleshooting.html">Troubleshooting</a></TD>
- *    </TR>
- *  </TABLE>
+ * <hr>
+ * <table id="nav-table">
+ *  <tr>
+ *   <td><a href="Tips.html">&#x25c4; Tips and Tricks</a></td>
+ *   <td><a href="Troubleshooting.html">Troubleshooting &#x25b6;</a></td>
+ *  </tr>
+ * </table>
  * @endhtmlonly
  */

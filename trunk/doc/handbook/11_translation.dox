@@ -38,12 +38,12 @@
  * Your changes will be applied to the next release of UltraDefrag.
  *
  * @htmlonly
- * <HR>
- *  <TABLE STYLE="border: none; width: 97%; margin:auto;">
- *    <TR>
- *      <TD STYLE="text-align: left; width: 50%;">Previous: <a href="Troubleshooting.html">Troubleshooting</a></TD>
- *      <TD STYLE="text-align: right; width: 50%;">Next: <a href="Development.html">Development</a></TD>
- *    </TR>
- *  </TABLE>
+ * <hr>
+ * <table id="nav-table">
+ *  <tr>
+ *   <td><a href="Troubleshooting.html">&#x25c4; Troubleshooting</a></td>
+ *   <td><a href="Development.html">Development &#x25b6;</a></td>
+ *  </tr>
+ * </table>
  * @endhtmlonly
  */

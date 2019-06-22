@@ -49,12 +49,12 @@
  * and save screenshots in png format before their submission to the bug tracker.
  * 
  * @htmlonly
- * <HR>
- *  <TABLE STYLE="border: none; width: 97%; margin:auto;">
- *    <TR>
- *      <TD STYLE="text-align: left; width: 50%;">Previous: <a href="FAQ.html">Frequently Asked Questions</a></TD>
- *      <TD STYLE="text-align: right; width: 50%;">Next: <a href="Translation.html">Translation</a></TD>
- *    </TR>
- *  </TABLE>
+ * <hr>
+ * <table id="nav-table">
+ *  <tr>
+ *   <td><a href="FAQ.html">&#x25c4; Frequently Asked Questions</a></td>
+ *   <td><a href="Translation.html">Translation &#x25b6;</a></td>
+ *  </tr>
+ * </table>
  * @endhtmlonly
  */
