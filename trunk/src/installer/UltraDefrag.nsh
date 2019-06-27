@@ -205,6 +205,60 @@
 ;-----------------------------------------
 
 /**
+ * This procedure returns system DPI in $R0.
+ * Possible return values: 96, 120, 144, 192.
+ * All the intermediate values get rounded up,
+ * all the values above 192 get rounded down.
+ */
+!macro GetSystemDPI
+
+    Push $0
+    Push $1
+    
+    System::Call USER32::GetDpiForSystem()i.r0
+    ${If} $0 U<= 0
+        System::Call USER32::GetDC(i0)i.r1 
+        System::Call GDI32::GetDeviceCaps(ir1,i88)i.r0 
+        System::Call USER32::ReleaseDC(i0,ir1)
+    ${EndIf}
+    
+    ${If} $0 > 144
+        StrCpy $R0 192
+    ${ElseIf} $0 > 120
+        StrCpy $R0 144
+    ${ElseIf} $0 > 96
+        StrCpy $R0 120
+    ${Else}
+        StrCpy $R0 96
+    ${EndIf}
+    
+    Pop $1
+    Pop $0
+    
+!macroend
+
+!define GetSystemDPI "!insertmacro GetSystemDPI"
+
+;-----------------------------------------
+
+!macro SetPageBitmap _Page
+
+    Push $R0
+
+    ${EnableX64FSRedirection}
+    ${GetSystemDPI}
+    ${NSD_SetImage} $mui.${_Page}.Image $PLUGINSDIR\WelcomePageBitmap$R0.bmp $mui.${_Page}.Image.Bitmap
+    ${DisableX64FSRedirection}
+    
+    Pop $R0
+
+!macroend
+
+!define SetPageBitmap "!insertmacro SetPageBitmap"
+
+;-----------------------------------------
+
+/**
  * This procedure validates destination folder and is
  * only used by the directory page verification callback.
  * Only empty folders or folders containing an existing
