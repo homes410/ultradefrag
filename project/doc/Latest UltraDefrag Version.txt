@@ -1,12 +1,12 @@
-The latest version of UltraDefrag (8.0.0) can be found at the official
+The latest version of UltraDefrag (8.0.1) can be found at the official
 UltraDefrag website:
 
   https://ultradefrag.net/
 
-UltraDefrag 8.0.0 provides a universal installer which guarantees
+UltraDefrag 8.0.1 provides a universal installer which guarantees
 easy installation on both 32 bit and 64 bit systems.
 
-To get older versions of UltraDefrag (7.1.1-) please follow the link:
+To get older versions of UltraDefrag (7.1.2-) please follow the link:
 
   https://sourceforge.net/projects/ultradefrag/files/
 

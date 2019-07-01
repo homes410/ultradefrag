@@ -1,6 +1,6 @@
 ﻿HISTORY
 
-  Version 7.1.2 2019-07-xx
+  Version 7.1.2 2019-07-01
   ------------------------------------------------------------------------------
     - compatibility with HiDPI displays was improved
     - Turkish translation was updated
