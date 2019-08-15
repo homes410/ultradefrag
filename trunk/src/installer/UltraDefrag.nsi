@@ -68,6 +68,8 @@
 !define ROOTDIR "..\..\.."
 !endif
 
+!define ARCHIVE_URL "https://sourceforge.net/projects/ultradefrag/files/stable-release/$%ULTRADFGVER%/"
+
 /*
  * Compress the installer using UPX.
  */

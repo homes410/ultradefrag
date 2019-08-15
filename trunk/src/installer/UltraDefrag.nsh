@@ -174,24 +174,30 @@
         ${If} $R0 == "x86"
         ${AndIf} "$%ULTRADFGARCH%" != "i386"
             ${LogAndDisplayAbort} \
-                "This installer cannot be used on 32-bit Windows!$\n \
-                Download the i386 version from https://ultradefrag.net/"
+                "This installer cannot be used on 32-bit Windows!$\nDownload the i386 version from SourceForge.$\nClick OK to proceed."
+            ${Unless} ${Silent}
+                ExecShell "open" ${ARCHIVE_URL}
+            ${EndUnless}
             Pop $R0
             Abort
         ${EndIf}
         ${If} $R0 == "amd64"
         ${AndIf} "$%ULTRADFGARCH%" != "amd64"
             ${LogAndDisplayAbort} \
-                "This installer cannot be used on x64 versions of Windows!$\n \
-                Download the amd64 version from https://ultradefrag.net/"
+                "This installer cannot be used on x64 versions of Windows!$\nDownload the amd64 version from SourceForge. Click OK$\nto proceed."
+            ${Unless} ${Silent}
+                ExecShell "open" ${ARCHIVE_URL}
+            ${EndUnless}
             Pop $R0
             Abort
         ${EndIf}
         ${If} $R0 == "ia64"
         ${AndIf} "$%ULTRADFGARCH%" != "ia64"
             ${LogAndDisplayAbort} \
-                "This installer cannot be used on IA-64 versions of Windows!$\n \
-                Download the ia64 version from https://ultradefrag.net/"
+                "This installer cannot be used on IA-64 versions of Windows!$\nDownload the ia64 version from SourceForge. Click OK to$\nproceed."
+            ${Unless} ${Silent}
+                ExecShell "open" ${ARCHIVE_URL}
+            ${EndUnless}
             Pop $R0
             Abort
         ${EndIf}
