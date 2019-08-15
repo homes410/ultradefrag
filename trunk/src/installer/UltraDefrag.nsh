@@ -351,7 +351,12 @@ SkipMove:
     File "zenwinx.dll"
     File "udefrag.dll"
     File /oname=hibernate4win.exe "hibernate.exe"
+    
+!ifdef EXCLUDE_DEBUGGER
+    Delete "$SYSDIR\udefrag-dbg.exe"
+!else
     File "udefrag-dbg.exe"
+!endif
 
     SetOutPath "$INSTDIR"
     File "${ROOTDIR}\src\HISTORY.TXT"

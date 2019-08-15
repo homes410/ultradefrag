@@ -203,7 +203,11 @@ rem Example:  call :build_portable_package .\bin\ia64 ia64
     copy /Y lua5.1a.dll         %PORTABLE_DIR%\
     copy /Y lua5.1a.exe         %PORTABLE_DIR%\
     copy /Y lua5.1a_gui.exe     %PORTABLE_DIR%\
-    copy /Y udefrag-dbg.exe     %PORTABLE_DIR%\
+    
+    if "%EXCLUDE_DEBUGGER%" neq "1" (
+        copy /Y udefrag-dbg.exe %PORTABLE_DIR%\
+    )
+    
     mkdir %PORTABLE_DIR%\handbook
     copy /Y "%~dp0\..\doc\handbook\doxy-doc\html\*.*" %PORTABLE_DIR%\handbook\
     mkdir %PORTABLE_DIR%\scripts

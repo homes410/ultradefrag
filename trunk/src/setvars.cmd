@@ -20,6 +20,16 @@ set SEND_CRASH_REPORTS=1
 ::   NOTE: don't forget to recompile wxWidgets after adjustment
 set ENABLE_WX_ASSERTS=0
 
+:: 32-bit UltraDefrag debugger triggers a lot of false positive
+:: detection by antivirus software, so we have to exclude it
+:: entirely to reduce maintenance costs
+set EXCLUDE_DEBUGGER=1
+
+if "%EXCLUDE_DEBUGGER%" equ "1" (
+    set ATTACH_DEBUGGER=0
+    set SEND_CRASH_REPORTS=0
+)
+
 :: paths to development tools
 set WINSDKBASE=C:\Program Files\Microsoft SDKs\Windows\v7.1
 set MINGWBASE=C:\Dev\TDM-GCC-32

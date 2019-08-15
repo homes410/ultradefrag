@@ -210,13 +210,20 @@ exit /B 1
     call :build_mod hibernate    hibernate.build      || goto fail
     call :build_mod console      console.build        || goto fail
     call :build_mod wxgui        wxgui.build          || goto fail
-    call :build_mod dbg          dbg.build            || goto fail
+
+    if "%EXCLUDE_DEBUGGER%" neq "1" (
+        call :build_mod dbg      dbg.build            || goto fail
+    )
 
     :: compress gui and command line tools for
     :: a bit faster startup on older machines
     if "%OFFICIAL_RELEASE%" equ "1" if %1 equ X86 (
         upx -q -9 .\bin\udefrag.exe
         upx -q -9 .\bin\ultradefrag.exe
+    )
+    
+    if "%OFFICIAL_RELEASE%" equ "1" if %1 equ X86 if "%EXCLUDE_DEBUGGER%" neq "1" (
+        upx -q -9 .\bin\udefrag-dbg.exe
     )
     
     :success

@@ -51,6 +51,10 @@
 !define OFFICIAL_RELEASE
 !endif
 
+!if "$%EXCLUDE_DEBUGGER%" == "1"
+!define EXCLUDE_DEBUGGER
+!endif
+
 /*
  * Constants
  */
