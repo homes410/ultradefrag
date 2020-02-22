@@ -314,6 +314,7 @@ MainFrame::MainFrame()
     m_busy = false;
     m_paused = false;
     m_sizeAdjustmentEnabled = false;
+    m_upgradeAvailable = false;
 
     // set main window icon
     wxIconBundle icons;
@@ -461,6 +462,11 @@ MainFrame::MainFrame()
  */
 MainFrame::~MainFrame()
 {
+    // show upgrade notification
+    if(m_upgradeAvailable){
+        ProcessCommandEvent(this,ID_ShowUpgradeDialog);
+    }
+    
     // terminate threads
     ProcessCommandEvent(this,ID_Stop);
     ::SetEvent(g_synchEvent);
