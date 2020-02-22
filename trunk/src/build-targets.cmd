@@ -226,6 +226,15 @@ exit /B 1
         upx -q -9 .\bin\udefrag-dbg.exe
     )
     
+    :: sign all the binaries
+    set UD_BIN_PATH=.\bin
+    if %1 equ amd64 set UD_BIN_PATH=%UD_BIN_PATH%\amd64
+    if %1 equ ia64 set UD_BIN_PATH=%UD_BIN_PATH%\ia64
+    
+    if "%OFFICIAL_RELEASE%" equ "1" (
+        %SIGNTOOL% %UD_BIN_PATH%\*.dll %UD_BIN_PATH%\*.exe || goto fail
+    )
+    
     :success
     :: revert manifests to their default state
     if %1 neq amd64 call make-manifests.cmd amd64
@@ -234,6 +243,7 @@ exit /B 1
     set WXWIDGETS_INC_PATH=
     set WXWIDGETS_INC2_PATH=
     set WXWIDGETS_LIB_PATH=
+    set UD_BIN_PATH=
     exit /B 0
 
     :fail
@@ -244,6 +254,7 @@ exit /B 1
     set WXWIDGETS_INC_PATH=
     set WXWIDGETS_INC2_PATH=
     set WXWIDGETS_LIB_PATH=
+    set UD_BIN_PATH=
     exit /B 1
     
 exit /B 0

@@ -174,6 +174,11 @@ rem Example:  call :build_installer .\bin\ia64 ia64
     set ULTRADFGARCH=%2
     "%NSISDIR%\makensis.exe" UltraDefrag.nsi || goto fail
     
+    :: sign the installer
+    if "%OFFICIAL_RELEASE%" equ "1" (
+        %SIGNTOOL% "ultradefrag-%ULTRADFGVER%*.exe" || goto fail
+    )
+    
     :success
     popd
     exit /B 0

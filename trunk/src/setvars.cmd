@@ -40,6 +40,8 @@ set SEVENZIP_PATH=C:\Program Files\7-Zip
 set GNUWIN32_DIR=C:\Program Files (x86)\GnuWin32\bin
 set CODEBLOCKS_EXE=C:\Program Files (x86)\CodeBlocks\codeblocks.exe
 
+set SIGNTOOL="%WINSDKBASE%\Bin\signtool.exe" sign /sha1 "63dbde1be6ffeaa2683eda72c12b4ad0d510f510" /tr http://time.certum.pl /fd sha256
+
 :: auxiliary stuff
 set VERSION=%VERSION_MAJOR%,%VERSION_MINOR%,%VERSION_REVISION%,0
 set VERSION2="%VERSION_MAJOR%, %VERSION_MINOR%, %VERSION_REVISION%, 0\0"
