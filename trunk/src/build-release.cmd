@@ -31,7 +31,7 @@ mkdir release
 call build-src-package.cmd || goto build_failed
 
 :: build binaries
-call build.cmd --all --use-winsdk --x86 --amd64 --ia64 --dev --pdf --trans || goto build_failed
+call build.cmd --all --use-winsdk --x86 --amd64 --ia64 --dev --pdf || goto build_failed
 copy .\bin\ultradefrag-%UDVERSION_SUFFIX%.bin.i386.exe .\release\
 copy .\bin\ultradefrag-portable-%UDVERSION_SUFFIX%.bin.i386.zip .\release\
 copy .\bin\amd64\ultradefrag-%UDVERSION_SUFFIX%.bin.amd64.exe .\release\

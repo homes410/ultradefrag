@@ -166,9 +166,13 @@ void MainFrame::OnHelpUpgrade(wxCommandEvent& event)
 
 void MainFrame::OnUpgradeNow(wxCommandEvent& event)
 {
-    wxString url(wxT("https://ultradefrag.net"));
-    if(!wxLaunchDefaultBrowser(url))
+    wxString url(wxT("https://ultradefrag.net/upgrade/v7/"));
+    url << wxString::Format(wxT("%u"),m_upgradeOfferId);
+    if(!wxLaunchDefaultBrowser(url)){
         Utils::ShowError(wxT("Cannot open %ls!"),ws(url));
+    } else {
+        m_upgradeLinkOpened = true;
+    }
 
     event.Skip();
 }
@@ -192,6 +196,8 @@ bool MainFrame::GetUpgradeOffer(const wxString& id,const wxString& locale,const 
 
 void MainFrame::ShowUpgradeDialog(wxCommandEvent& event)
 {
+    if(m_upgradeLinkOpened) return;
+    
     // download upgrade offer
     wxFileName target(wxT(".\\tmp"));
     target.Normalize();
@@ -213,7 +219,7 @@ void MainFrame::ShowUpgradeDialog(wxCommandEvent& event)
         wxDialog dlg(this,wxID_ANY,_("Special offer"));
 
         wxImage img(path,wxBITMAP_TYPE_JPEG);
-        img.Rescale(DPI(img.GetWidth()) / 2,DPI(img.GetHeight()) / 2,wxIMAGE_QUALITY_BICUBIC);
+        //img.Rescale(DPI(img.GetWidth()) / 2,DPI(img.GetHeight()) / 2,wxIMAGE_QUALITY_BICUBIC);
         
         wxStaticBitmap *pic = new wxStaticBitmap(&dlg,wxID_ANY,wxBitmap(img));
         
@@ -251,7 +257,10 @@ void MainFrame::ShowUpgradeDialog(wxCommandEvent& event)
     result = GetUpgradeOffer(wxT("2"),g_locale->GetName(),path);
     if(!result) result = GetUpgradeOffer(wxT("2"),wxT("en_US"),path);
     
-    if(result) m_upgradeAvailable = true;
+    if(result){
+        m_upgradeAvailable = true;
+        m_upgradeOfferId ++;
+    }
 }
 
 /** @} */

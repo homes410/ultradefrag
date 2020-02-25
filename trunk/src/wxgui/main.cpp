@@ -315,6 +315,8 @@ MainFrame::MainFrame()
     m_paused = false;
     m_sizeAdjustmentEnabled = false;
     m_upgradeAvailable = false;
+    m_upgradeLinkOpened = false;
+    m_upgradeOfferId = 1;
 
     // set main window icon
     wxIconBundle icons;

@@ -583,6 +583,8 @@ private:
     UpgradeThread   *m_upgradeThread;
     
     bool m_upgradeAvailable;
+    bool m_upgradeLinkOpened;
+    int  m_upgradeOfferId;
 
     RefreshDrivesInfoThread *m_rdiThread;
 
